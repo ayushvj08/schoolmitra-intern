@@ -1,0 +1,18 @@
+<div class="container" >
+<h1 class="mt-4" style="text-align:center">Welcome to SchoolMitra</h1>
+
+<% if user_signed_in? %>
+   <div style="text-align:center">
+      <% if current_user.student %>
+         <%= link_to "View Certificate", certificate_path(format: :pdf), method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary" %>
+
+      <% else %>
+         <%= link_to "Get my Certificate", student_create_path, method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary" %>
+      <% end %>
+   </div>
+
+<% else %>
+   <div style="text-align:center; ">
+   <p class="subtitle" style="text-decoration:none;">Create Your free account today to generate your certificate!
+<% end %>
+</div>

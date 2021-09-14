@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+        <%= stylesheet_link_tag wicked_pdf_asset_base64("certificate") %>
+
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+      <% # <%= wicked_pdf_image_tag "runner.jpg" %> 
+
+    <% # <div class="top"> %>
+      <%= image_tag wicked_pdf_asset_base64("ace.png"), class: "logo" %>
+      <section class="main-content">
+      <h1 class="heading">Demo School</h1>
+        Varanasi, Uttar Pradesh<br/>Reg No. 376357<br/>
+        English Medium School<br/>
+
+        <p class="title">CHARACTER CERTIFICATE</p>
+        <p class="subtitle">TO WHOM IT MAY CONCERN</p>
+
+        <p class="content">
+        This is to certify that Miss/Master <%= current_user.student.name %> S/D of Mr. <%= current_user.student.parent.father_name %> is/was a bonafide student of our
+        school.<br/> As per our school record his/her Date of Birth is <%= DateTime.parse(current_user.student.date_of_birth).strftime("%d-%B-%Y") %>.<br/>
+        He/She possesses a good moral conduct and behaviour.<br/>
+        We wish him/her a bright future.<br/>
+        </p>
+
+        <div class="footing" >
+        <p class="designation">Principal</p>
+        <p class="date">Date: <%= Date.today.strftime("%A, %d-%B-%Y") %></p>
+        </div>
+
+
+     </section>
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

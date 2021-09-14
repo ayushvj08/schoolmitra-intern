@@ -1,0 +1,53 @@
+#content {
+  /* margin: 10rem; */
+  /* padding: 300px; */
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.content {
+  text-align: left;
+}
+.main-content {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.heading {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.title {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 4rem;
+}
+.subtitle {
+  text-decoration: underline;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+.content {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+}
+.footing {
+  margin-top: 7rem;
+}
+.designation {
+  display: inline;
+  padding-right: 50%;
+}
+.date {
+  display: inline;
+}

@@ -1,0 +1,45 @@
+<main class="container mx-auto border m-3" style="max-width:500px;">
+
+<h4 style="text-align:center;" class="border-bottom p-2">
+Fill the details correctly to Generate Certificate!</h4>
+
+<section >
+
+<%= form_with url: student_update_path, method: :put do |form| %>
+
+
+    <div class="form-group">  
+        <p class="form-label">Name <span>*</span> </p>
+        <%= form.text_field :name, value: current_user.student.name, required: "required", class: "mb-2 form-control" %>
+    </div>
+    <div class="form-group">  
+        <p class="form-label">Father Name <span>*</span> </p>
+        <%= form.text_field :father_name, value: current_user.student.parent.father_name, required: "required", class: "mb-2 form-control" %>
+    </div>    <div class="form-group">  
+        <p class="form-label">Mother Name <span>*</span> </p>
+        <%= form.text_field :mother_name, value: current_user.student.parent.mother_name, required: "required", class: "mb-2 form-control" %>
+    </div>   
+    <div class="form-group">  
+        <p class="form-label">Standard <span>*</span> </p>
+        <%= form.text_field :standard, value: current_user.student.standard, required: "required", class: "mb-2 form-control" %>
+    </div>
+    <div class="form-group">  
+        <p class="form-label">Section <span>*</span> </p>
+        <%= form.text_field :section, value: current_user.student.section, required: "required", class: "mb-2 form-control" %>
+    </div>
+    <div class="form-group">  
+        <p class="form-label">Date Of Birth <span>*</span> </p>
+        <%= form.date_field :date_of_birth, value: current_user.student.date_of_birth, required: "required", class: "mb-2 form-control" %>
+    </div>    
+    <div class="form-group">  
+        <p class="form-label">Admission Number <span>*</span> </p>
+        <%= form.text_field :admission_number, value: current_user.student.admission_number, required: "required", class: "mb-2 form-control" %>
+    </div>
+    <div class="form-group">
+        <%= form.submit "Save", class: "mb-2 form-control btn btn-primary" %>
+    </div>
+<% end %>
+
+</section>
+
+</main>
