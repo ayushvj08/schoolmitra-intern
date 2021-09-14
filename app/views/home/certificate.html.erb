@@ -22,7 +22,7 @@
 
         <p class="content">
         This is to certify that Miss/Master <%= current_user.student.name %> S/D of Mr. <%= current_user.student.parent.father_name %> is/was a bonafide student of our
-        school.<br/> As per our school record his/her Date of Birth is <%= DateTime.parse(current_user.student.date_of_birth).strftime("%d-%B-%Y") %>.<br/>
+        school.<br/> As per our school record his/her Date of Birth is <%= current_user.student.date_of_birth.strftime("%d-%B-%Y") %>.<br/>
         He/She possesses a good moral conduct and behaviour.<br/>
         We wish him/her a bright future.<br/>
         </p>
