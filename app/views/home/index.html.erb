@@ -8,11 +8,14 @@
 
       <% else %>
          <%= link_to "Get my Certificate", student_create_path, method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary" %>
+
       <% end %>
    </div>
 
 <% else %>
    <div style="text-align:center; ">
-   <p class="subtitle" style="text-decoration:none;">Create Your free account today to generate your certificate!
+   <p class="subtitle mt-3" style="text-decoration:none;">Create Your free account today!<br/>
+   <%= link_to "Sign up", new_user_registration_path, class: "mt-4 btn btn-lg btn-primary" %>
+
 <% end %>
 </div>
