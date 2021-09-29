@@ -13,8 +13,7 @@
         <% if current_user %>
         <% if current_user.student %>
         <li class="nav-item">
-        <%= link_to "Student Info", student_update_path, class: "nav-link active" %>
-          <% # <a class="nav-link" href="#">Features</a> %>
+        <%= link_to "Student Info", edit_student_path, class: "nav-link active" %>
         </li>
         <% end %>
         <% end %>

@@ -4,10 +4,10 @@
 <% if user_signed_in? %>
    <div style="text-align:center">
       <% if current_user.student %>
-         <%= link_to "View Certificate", certificate_path(format: :pdf), method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary" %>
+         <%= link_to "View Certificate", certificate_path(format: :pdf), method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary", style: "color#fff;" %>
 
       <% else %>
-         <%= link_to "Get my Certificate", student_create_path, method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary" %>
+         <%= link_to "Get my Certificate", new_student_path, method: :get, class: "mt-5 btn btn-lg mx-auto btn-primary", style: "color#fff;" %>
 
       <% end %>
    </div>
