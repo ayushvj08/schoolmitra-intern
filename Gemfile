@@ -61,3 +61,5 @@ gem "pg", "~> 1.2"
 gem "wicked_pdf", "~> 2.1"
 
 gem "wkhtmltopdf-binary", "~> 0.12.6"
+
+gem "sidekiq", "~> 6.2"
