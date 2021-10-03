@@ -17,7 +17,8 @@ class StudentController < ApplicationController
     @student = current_user.build_student(student_params)
     @parent = current_user.student.build_parent(parent_params)
     if @student.save && @parent.save
-      redirect_to certificate_path(format: :pdf)
+      send_data CreatePdfJob.set(wait: 10.seconds).perform_later(current_user), filename: "Certificate.pdf", disposition: "attachment"
+      # redirect_to "/"
     else
       flash[:alert] = @student.errors.full_messages.join(", ")
       flash[:alert] += @parent.errors.full_messages.join(", ")
@@ -32,7 +33,8 @@ class StudentController < ApplicationController
     @parent.update(parent_params)
 
     if @student.save && @parent.save
-      redirect_to certificate_path(format: :pdf)
+      send_data CreatePdfJob.set(wait: 10.seconds).perform_later(current_user), filename: "Certificate.pdf", disposition: "attachment"
+      # redirect_to "/"
     else
       flash[:alert] = @student.errors.full_messages.join(", ")
       flash[:alert] += @parent.errors.full_messages.join(", ")
